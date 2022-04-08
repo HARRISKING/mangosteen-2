@@ -1,7 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Records", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+RSpec.describe "Record", type: :request do
+  context "create record" do
+    it "should create a record" do
+      post '/records', params: {amount: 100, category: 'outgoings', notes: '测试'}
+      expect(response.status).to eq 200 
+    end
   end
 end
+
