@@ -7,4 +7,10 @@ class ApplicationController < ActionController::API
    render json: {errors: resource.errors}, status: 422
   end
  end
+
+ def render_resources(resources)
+  render json: {
+   resources: resources
+  }
+ end
 end
